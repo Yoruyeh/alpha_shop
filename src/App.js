@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header></header>
-      <Main class="site-main"/>
+      <Main />
       <footer></footer>
     </div>
   );
