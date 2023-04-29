@@ -4,12 +4,15 @@ import { ReactComponent as RightArrowIcon} from '../icons/right-arrow.svg'
 export default function ProgressControl() {
   return (
     <>
+    <section class="progress-control-container col col-lg-6 col-sm-12">
+    
       <section class="button-group col col-12" data-phase="address">
-            <button class="next">
-              下一步
-              <RightArrowIcon class="cursor-point" />
-            </button>
-          </section>
+        <button class="next">
+          下一步
+          <RightArrowIcon class="cursor-point" />
+        </button>
+      </section>
+    </section>
           {/* <section class="button-group col col-12" data-phase="shipping">
             <button class="prev">
               <LeftArrowIcon class="cursor-point" />
