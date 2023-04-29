@@ -5,9 +5,9 @@ import './styles/all.scss';
 function App() {
   return (
     <div className="App">
-      <header>header</header>
+      <header></header>
       <Main class="site-main"/>
-      <footer>footer</footer>
+      <footer></footer>
     </div>
   );
 }
