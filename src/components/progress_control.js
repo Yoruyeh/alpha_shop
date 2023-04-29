@@ -5,7 +5,6 @@ export default function ProgressControl() {
   return (
     <>
     <section class="progress-control-container col col-lg-6 col-sm-12">
-    
       <section class="button-group col col-12" data-phase="address">
         <button class="next">
           下一步
