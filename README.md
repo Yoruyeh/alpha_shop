@@ -9,13 +9,21 @@ This project was built by React, and has only a static webpage so far.
 
 1. Please ensure that npm and Node.js have been installed in the environment.
 2. Clone the project to local repository.
-   `$ git clone https://github.com/Yoruyeh/alpha_shop.git `
+   ```
+   $ git clone https://github.com/Yoruyeh/alpha_shop.git 
+   ```
 3. Use terminal to open the file in local, and input below instruction:
-  `$ npm install`
+  ```
+  $ npm install
+  ```
 4. Input below instruction after the install:
-  `$ npm start`
+  ```
+  $ npm start
+  ```
 5. The webpage will be opened in 'http://localhost:3000' automatically, if you see below message in terminal:
-  `webpack compiled successfully`
+  ```
+  webpack compiled successfully
+  ```
 
 ## Devloper Tools
 
