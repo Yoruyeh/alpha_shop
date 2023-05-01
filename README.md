@@ -1,5 +1,5 @@
 # Alpha Shop Website
-![image](./src/image/snapshot.png)
+![image](./src/image/snapshot2.png)
 
 ## Introduction
 
