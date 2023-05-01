@@ -24,6 +24,10 @@ This project was built by React, and has only a static webpage so far.
     ```
     webpack compiled successfully
     ```
+6. If you would like to stop using the website:
+    ```
+    ctrl + c
+    ```
 
 ## Devloper Tools
 
