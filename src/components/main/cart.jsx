@@ -39,6 +39,11 @@ function ProductInfo( {id, name, img, price, quantity} ) {
 
 
 export default function Cart() {
+  let sum = 0
+  productData.forEach(data => {
+  sum += (data.price * data.quantity) 
+})
+
   return (
     <section class="cart-container col col-lg-5 col-sm-12">
       <h3 class="cart-title">購物籃</h3>
@@ -49,11 +54,11 @@ export default function Cart() {
 
       <section class="cart-info shipping col col-12">
         <div class="text">運費</div>
-        <div class="price"></div>
+        <div class="price">免費</div>
       </section>
       <section class="cart-info total col col-12">
         <div class="text">小計</div>
-        <div class="price"></div>
+        <div class="price">{sum}</div>
       </section>
     </section>
   )
