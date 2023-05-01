@@ -20,15 +20,15 @@ function NavbarMenu() {
 
 function NavbarIcon() {
   const icons = [
-    {name: 'search', img: <SearchIcon class="nav-icon cursor-point"/>},
-    {name: 'cart', img: <CartIcon class="nav-icon cursor-point"/>}, 
-    {name: 'moon', img: <MoonIcon class="nav-icon cursor-point"/>}, 
-    {name: 'sun', img: <SunIcon class="nav-icon cursor-point"/>}
+    {name: 'search', img: <SearchIcon className="nav-icon cursor-point"/>},
+    {name: 'cart', img: <CartIcon className="nav-icon cursor-point"/>}, 
+    {name: 'moon', img: <MoonIcon className="nav-icon cursor-point"/>}, 
+    {name: 'sun', img: <SunIcon className="nav-icon cursor-point"/>}
   ]
   return (
     icons.map(icon => 
       icon.name === 'moon' ?
-      <li id="theme-toggle"class="nav-item" key={icon.name}> {icon.img} </li> :
+      <li id="theme-toggle"className="nav-item" key={icon.name}> {icon.img} </li> :
       <li className="nav-item" key={icon.name}> {icon.img} </li> 
     )
   )

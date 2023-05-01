@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./components/header/header";
 import Main from "./components/main/main";
+import Footer from "./components/footer/footer";
 import './styles/all.scss';
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
     <div className="App">
       <Header />
       <Main />
-      <footer></footer>
+      <Footer />
     </div>
   );
 }
