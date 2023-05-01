@@ -4,11 +4,11 @@ import { ReactComponent as RightArrowIcon} from '/Users/yoru/alpha_camp/alpha_sh
 export default function ProgressControl() {
   return (
     <>
-    <section class="progress-control-container col col-lg-6 col-sm-12">
-      <section class="button-group col col-12" data-phase="address">
-        <button class="next">
+    <section className="progress-control-container col col-lg-6 col-sm-12">
+      <section className="button-group col col-12" data-phase="address">
+        <button className="next">
           下一步
-          <RightArrowIcon class="cursor-point" />
+          <RightArrowIcon className="cursor-point" />
         </button>
       </section>
     </section>

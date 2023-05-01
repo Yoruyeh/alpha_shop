@@ -3,8 +3,8 @@ import ProgressControl from "./progress_control";
 
 function Main() {
   return (
-    <main class="site-main">
-     <div class="main-container">
+    <main className="site-main">
+     <div className="main-container">
       <Register />
       <ProgressControl />
      </div>
