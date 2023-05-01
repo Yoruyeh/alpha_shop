@@ -1,4 +1,4 @@
-import { ReactComponent as RightArrowIcon} from '../icons/right-arrow.svg'
+import { ReactComponent as RightArrowIcon} from '/Users/yoru/alpha_camp/alpha_shop/src/icons/right-arrow.svg'
 // import { ReactComponent as LeftArrowIcon} from '../icons/left-arrow.svg'
 
 export default function ProgressControl() {
