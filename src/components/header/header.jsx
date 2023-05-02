@@ -1,9 +1,9 @@
-import { ReactComponent as ToggleIcon } from "/Users/yoru/alpha_camp/alpha_shop/src/icons/toggle.svg";
-import { ReactComponent as SearchIcon } from "/Users/yoru/alpha_camp/alpha_shop/src/icons/search.svg";
-import { ReactComponent as CartIcon } from "/Users/yoru/alpha_camp/alpha_shop/src/icons/cart.svg";
-import { ReactComponent as MoonIcon } from "/Users/yoru/alpha_camp/alpha_shop/src/icons/moon.svg";
-import { ReactComponent as SunIcon } from "/Users/yoru/alpha_camp/alpha_shop/src/icons/sun.svg";
-import { ReactComponent as LogoIcon } from "/Users/yoru/alpha_camp/alpha_shop/src/icons/logo.svg";
+import { ReactComponent as ToggleIcon } from "../../icons/toggle.svg";
+import { ReactComponent as SearchIcon } from "../../icons/search.svg";
+import { ReactComponent as CartIcon } from "../../icons/cart.svg";
+import { ReactComponent as MoonIcon } from "../../icons/moon.svg";
+import { ReactComponent as SunIcon } from "../../icons/sun.svg";
+import { ReactComponent as LogoIcon } from "../../icons/logo.svg";
 
 
 

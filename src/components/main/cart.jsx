@@ -1,5 +1,5 @@
-import { ReactComponent as PlusIcon } from "/Users/yoru/alpha_camp/alpha_shop/src/icons/plus.svg"
-import { ReactComponent as MinusIcon } from "/Users/yoru/alpha_camp/alpha_shop/src/icons/minus.svg"
+import { ReactComponent as PlusIcon } from "../../icons/plus.svg"
+import { ReactComponent as MinusIcon } from "../../icons/minus.svg"
 
 const productData = [
   {

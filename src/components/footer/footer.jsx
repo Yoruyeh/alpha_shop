@@ -1,7 +1,7 @@
-import { ReactComponent as FacebookIcon } from "/Users/yoru/alpha_camp/alpha_shop/src/icons/facebook.svg"
-import { ReactComponent as InstagramIcon } from "/Users/yoru/alpha_camp/alpha_shop/src/icons/instagram.svg"
-import { ReactComponent as WhatsappIcon } from "/Users/yoru/alpha_camp/alpha_shop/src/icons/whatsapp.svg"
-import { ReactComponent as LogoIcon } from "/Users/yoru/alpha_camp/alpha_shop/src/icons/logo.svg";
+import { ReactComponent as FacebookIcon } from "../../icons/facebook.svg"
+import { ReactComponent as InstagramIcon } from "../../icons/instagram.svg"
+import { ReactComponent as WhatsappIcon } from "../../icons/whatsapp.svg"
+import { ReactComponent as LogoIcon } from "../../icons/logo.svg";
 
 function FooterContent({title, links}) {
   return (
