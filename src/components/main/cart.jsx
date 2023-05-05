@@ -45,20 +45,20 @@ export default function Cart() {
 })
 
   return (
-    <section class="cart-container col col-lg-5 col-sm-12">
-      <h3 class="cart-title">購物籃</h3>
+    <section className="cart-container col col-lg-5 col-sm-12">
+      <h3 className="cart-title">購物籃</h3>
         <section className="product-list col col-12" data-total-price="0">
         {productData.map(data => 
           <ProductInfo key={data.id} {...data}/>)}
         </section>
 
-      <section class="cart-info shipping col col-12">
-        <div class="text">運費</div>
-        <div class="price">免費</div>
+      <section className="cart-info shipping col col-12">
+        <div className="text">運費</div>
+        <div className="price">免費</div>
       </section>
-      <section class="cart-info total col col-12">
-        <div class="text">小計</div>
-        <div class="price">{sum}</div>
+      <section className="cart-info total col col-12">
+        <div className="text">小計</div>
+        <div className="price">{sum}</div>
       </section>
     </section>
   )

@@ -5,7 +5,7 @@ import Step3 from "./step3";
 
 function Register() {
   return (
-  <section className="register-container col col-lg-6 col-sm-12" data-phase="3" data-total-price="0">
+  <section className="register-container col col-lg-6 col-sm-12" data-phase="1" data-total-price="0">
       <StepProgress />
     <section className="form-container col col-12">
       <Step1 />
