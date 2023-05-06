@@ -3,9 +3,9 @@ import Step1 from "./step1";
 import Step2 from "./step2";
 import Step3 from "./step3";
 
-function Register() {
+function Register({ dataPhase }) {
   return (
-  <section className="register-container col col-lg-6 col-sm-12" data-phase="1" data-total-price="0">
+  <section className="register-container col col-lg-6 col-sm-12" data-phase={dataPhase} data-total-price="0">
       <StepProgress />
     <section className="form-container col col-12">
       <Step1 />
