@@ -1,5 +1,6 @@
 import { ReactComponent as PlusIcon } from "../../icons/plus.svg"
 import { ReactComponent as MinusIcon } from "../../icons/minus.svg"
+import { useState } from "react"
 
 const productData = [
   {
@@ -18,17 +19,40 @@ const productData = [
   },
 ]
 
-function ProductInfo( {id, name, img, price, quantity} ) {
+function ProductInfo( {id, name, img, price, getSum} ) {
+
+  const [count, setCount] = useState(0)
+  
+  function handleMinusClick() {
+      setCount(count - 1)
+  }
+
+  function handlePlusClick() {
+    setCount(count + 1)
+  }
+
+  
   return (
-    <div className="product-container col col-12" key={id} data-count={quantity} data-price={price}>
+    <div className="product-container col col-12" key={id} data-count={count} data-price={price} >
       <img className="img-container" alt={name} src={img} />
       <div className="product-info">
         <div className="product-name">{name}</div>
         <div className="product-control-container">
           <div className="product-control">
-              <MinusIcon className="product-action minus"/>
-            <span className="product-count">{quantity}</span>
-              <PlusIcon className="product-action plus"/>
+              <MinusIcon className="product-action minus" onClick={() => {
+                if (count <= 0) {
+                  return
+                } else {
+                  handleMinusClick();
+                  getSum(-price);
+                }}
+                }
+                 />
+            <span className="product-count">{count}</span>
+              <PlusIcon className="product-action plus" onClick={() => {
+                handlePlusClick();
+                getSum(+price);
+                }}/>
           </div>
         </div>
         <div className="price">{price}</div>
@@ -39,17 +63,21 @@ function ProductInfo( {id, name, img, price, quantity} ) {
 
 
 export default function Cart() {
-  let sum = 0
-  productData.forEach(data => {
-  sum += (data.price * data.quantity) 
-})
+  const [totalPrice, setTotalPrice] = useState(0)
+  
+  function getSum(sum) {
+    setTotalPrice(totalPrice + sum)
+    if ((totalPrice + sum) < 0) {
+      setTotalPrice(0)
+    }
+  }
 
   return (
     <section className="cart-container col col-lg-5 col-sm-12">
       <h3 className="cart-title">購物籃</h3>
-        <section className="product-list col col-12" data-total-price="0">
+        <section className="product-list col col-12" data-total-price={totalPrice}>
         {productData.map(data => 
-          <ProductInfo key={data.id} {...data}/>)}
+          <ProductInfo key={data.id} {...data} getSum={getSum}/>)}
         </section>
 
       <section className="cart-info shipping col col-12">
@@ -58,7 +86,7 @@ export default function Cart() {
       </section>
       <section className="cart-info total col col-12">
         <div className="text">小計</div>
-        <div className="price">{sum}</div>
+        <div className="price">$ {totalPrice}</div>
       </section>
     </section>
   )
