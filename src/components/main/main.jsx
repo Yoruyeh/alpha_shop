@@ -5,6 +5,7 @@ import { useState } from "react";
 
 function Main() {
   const [dataPhase, setDataPhase] = useState(1)
+  const [totalPrice, setTotalPrice] = useState(0)
 
   function handleClick(e) {
     if (e.target.classList.contains('next') && dataPhase !== 3) {
@@ -16,11 +17,18 @@ function Main() {
     }
   }
 
+  function getSum(sum) {
+    setTotalPrice(totalPrice + sum)
+    if ((totalPrice + sum) < 0) {
+      setTotalPrice(0)
+    }
+  }
+
   return (
     <main className="site-main">
      <div className="main-container">
-      <Register dataPhase={dataPhase}/>
-      <Cart />
+      <Register dataPhase={dataPhase} totalPrice={totalPrice}/>
+      <Cart getSum={getSum} totalPrice={totalPrice}/>
       <ProgressControl onClick={handleClick}/>
      </div>
     </main>

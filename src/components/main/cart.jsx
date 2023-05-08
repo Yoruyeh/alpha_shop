@@ -62,15 +62,8 @@ function ProductInfo( {id, name, img, price, getSum} ) {
 }
 
 
-export default function Cart() {
-  const [totalPrice, setTotalPrice] = useState(0)
+export default function Cart({ getSum, totalPrice}) {
   
-  function getSum(sum) {
-    setTotalPrice(totalPrice + sum)
-    if ((totalPrice + sum) < 0) {
-      setTotalPrice(0)
-    }
-  }
 
   return (
     <section className="cart-container col col-lg-5 col-sm-12">
