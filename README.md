@@ -1,9 +1,12 @@
 # Alpha Shop Website
-![image](./src/image/snapshot2.png)
+![image](./src/image/snapshot3.png)
 
 ## Introduction
 
-This project was built by React, and has only a static webpage so far.
+This project was developed using React. 
+It is a mock-up of an online shop that showcases the checkout processes and the products in the cart. 
+You can easily navigate between steps by clicking on the next or previous button, and modify the quantity of the products by using the plus and minus buttons.
+
 
 ## Getting Started
 
