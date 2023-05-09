@@ -24,11 +24,15 @@ function ProductInfo( {id, name, img, price, getSum} ) {
   const [count, setCount] = useState(0)
   
   function handleMinusClick() {
+    if (count > 0) {
       setCount(count - 1)
+      getSum(-price)
+    }
   }
 
   function handlePlusClick() {
     setCount(count + 1)
+    getSum(price)
   }
 
   
@@ -39,20 +43,10 @@ function ProductInfo( {id, name, img, price, getSum} ) {
         <div className="product-name">{name}</div>
         <div className="product-control-container">
           <div className="product-control">
-              <MinusIcon className="product-action minus" onClick={() => {
-                if (count <= 0) {
-                  return
-                } else {
-                  handleMinusClick();
-                  getSum(-price);
-                }}
-                }
+              <MinusIcon className="product-action minus" onClick={handleMinusClick}
                  />
             <span className="product-count">{count}</span>
-              <PlusIcon className="product-action plus" onClick={() => {
-                handlePlusClick();
-                getSum(+price);
-                }}/>
+              <PlusIcon className="product-action plus" onClick={handlePlusClick}/>
           </div>
         </div>
         <div className="price">{price}</div>

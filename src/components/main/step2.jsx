@@ -2,7 +2,7 @@
 function Form2({ text, price, time }) {
   return (
     <label className="radio-group col col-12" data-price={price} key={price}>
-      <input id="shipping-standard" type="radio" name="shipping"  checked/>
+      <input id="shipping-standard" type="radio" name="shipping" defaultChecked={true}/>
       <div className="radio-info">
         <div className="col col-12">
           <div className="text">{text}</div>
