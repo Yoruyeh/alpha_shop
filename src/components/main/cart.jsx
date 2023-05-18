@@ -1,23 +1,8 @@
 import { ReactComponent as PlusIcon } from "../../icons/plus.svg"
 import { ReactComponent as MinusIcon } from "../../icons/minus.svg"
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { CartContext } from "./cartContext"
 
-const productData = [
-  {
-    id: '1',
-    name: '貓咪罐罐',
-    img: 'https://picsum.photos/300/300?text=1',
-    price: 100,
-    quantity: 2,
-  },
-  {
-    id: '2',
-    name: '貓咪干干',
-    img: 'https://picsum.photos/300/300?text=2',
-    price: 200,
-    quantity: 1,
-  },
-]
 
 function ProductInfo( {id, name, img, price, getSum} ) {
 
@@ -57,13 +42,13 @@ function ProductInfo( {id, name, img, price, getSum} ) {
 
 
 export default function Cart({ getSum, totalPrice}) {
-  
+  const cartData = useContext(CartContext)
 
   return (
     <section className="cart-container col col-lg-5 col-sm-12">
       <h3 className="cart-title">購物籃</h3>
         <section className="product-list col col-12" data-total-price={totalPrice}>
-        {productData.map(data => 
+        {cartData.map(data => 
           <ProductInfo key={data.id} {...data} getSum={getSum}/>)}
         </section>
 

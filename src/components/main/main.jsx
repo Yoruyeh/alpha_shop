@@ -1,11 +1,15 @@
 import Register from "./register";
 import Cart from "./cart";
 import ProgressControl from "./progress_control";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "./cartContext";
 
 function Main() {
   const [dataPhase, setDataPhase] = useState(1)
   const [totalPrice, setTotalPrice] = useState(0)
+  const cartData = useContext(CartContext)
+  const [productData, setProductData] = useState(cartData)
+
 
   function handleClick(e) {
     if (e.target.classList.contains('next') && dataPhase !== 3) {
@@ -27,9 +31,11 @@ function Main() {
   return (
     <main className="site-main">
      <div className="main-container">
-      <Register dataPhase={dataPhase} totalPrice={totalPrice}/>
-      <Cart getSum={getSum} totalPrice={totalPrice}/>
-      <ProgressControl onClick={handleClick}/>
+      <CartContext.Provider value={productData}>
+        <Register dataPhase={dataPhase} totalPrice={totalPrice}/>
+        <Cart getSum={getSum} totalPrice={totalPrice}/>
+        <ProgressControl onClick={handleClick}/>
+      </CartContext.Provider>
      </div>
     </main>
   )
