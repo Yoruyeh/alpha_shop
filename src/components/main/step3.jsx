@@ -1,37 +1,40 @@
+import { useContext } from "react"
+import { FormContext } from "./formContext"
 
-
-function Form3( {label, placeholder} ) {
-  if (placeholder.length > 5) {
-    return (
-      <div className="input-group input-w-lg-4 input-w-sm-full" key={label}>
-        <div className="input-label">{label}</div>
-          <input type="text" placeholder={placeholder} />
-       </div>
-    )
-  } else {
-    return (
-      <div className="input-group input-w-lg-3 input-w-sm-s3" key={label}>
-        <div className="input-label">{label}</div>
-          <input type="text" placeholder={placeholder} />
-       </div>
-    )
-  }
+function Form3({ onChange }) {
+  const formData = useContext(FormContext)
+  return (
+    <>
+    {formData.map(data => {
+      if (data.defaultValue.length > 5) {
+        return (
+          <div className="input-group input-w-lg-4 input-w-sm-full" key={data.name}>
+            <div className="input-label">{data.label}</div>
+              <input type="text" name={data.name} placeholder={data.defaultValue} 
+              onChange={(e) => onChange({ name: data.name, inputValue: e.target.value})}/>
+          </div>
+        )
+      } else {
+        return (
+          <div className="input-group input-w-lg-3 input-w-sm-s3" key={data.name}>
+            <div className="input-label">{data.label}</div>
+              <input type="text" name={data.name} placeholder={data.defaultValue} 
+              onChange={(e) => onChange({ name: data.name, inputValue: e.target.value})}/>
+          </div>
+        )
+      }
+    })}
+    </>
+  )
 }
 
-export default function Step3() {
-  return (
+export default function Step3({ onChange }) {
+    return (
     <form className="col col-12" data-phase="credit-card">
       <h3 className="form-title">付款資訊</h3>
       <section className="form-body col col-12">
         <div className="col col-12">
-          <Form3 label={"持卡人姓名"} placeholder={"John Doe"}/>
-        </div>
-        <div className="col col-12">
-          <Form3 label={"卡號"} placeholder={"1111 2222 3333 4444"}/>
-        </div>
-        <div className="col col-12">
-          <Form3 label={"有效期限"} placeholder={"MM/YY"}/>
-          <Form3 label={"CVC / CCV"} placeholder={"123"}/>
+          <Form3 onChange={({ name, inputValue }) => onChange({ name, inputValue })}/>
         </div>
       </section>
     </form>

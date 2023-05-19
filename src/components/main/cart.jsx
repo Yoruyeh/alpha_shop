@@ -29,9 +29,8 @@ function ProductInfo(props) {
 }
 
 
-export default function Cart({ onMinusClick, onPlusClick}) {
+export default function Cart({ onMinusClick, onPlusClick, totalPrice}) {
   const cartData = useContext(CartContext)
-  const totalPrice = cartData.map(data => data.price * data.quantity).reduce((acc, cur) => acc + cur)
 
   return (
     <section className="cart-container col col-lg-5 col-sm-12">
