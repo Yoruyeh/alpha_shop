@@ -6,9 +6,36 @@ import { CartContext } from "./cartContext";
 
 function Main() {
   const [dataPhase, setDataPhase] = useState(1)
-  const [totalPrice, setTotalPrice] = useState(0)
   const cartData = useContext(CartContext)
   const [productData, setProductData] = useState(cartData)
+
+  function handleMinusClick(id) {
+    setProductData((prevData) => {
+      return prevData.map(data => {
+        if (data.id === id) {
+          return {
+            ...data,
+            quantity: data.quantity === 0 ? 0 : data.quantity - 1
+          }
+        }
+        return data;
+      })
+    })
+  }
+
+  function handlePlusClick(id) {
+    setProductData((prevData) => {
+      return prevData.map(data => {
+        if (data.id === id) {
+          return {
+            ...data,
+            quantity: data.quantity + 1
+          }
+        }
+        return data;
+      })
+    })
+  }
 
 
   function handleClick(e) {
@@ -21,19 +48,13 @@ function Main() {
     }
   }
 
-  function getSum(sum) {
-    setTotalPrice(totalPrice + sum)
-    if ((totalPrice + sum) < 0) {
-      setTotalPrice(0)
-    }
-  }
 
   return (
     <main className="site-main">
      <div className="main-container">
       <CartContext.Provider value={productData}>
-        <Register dataPhase={dataPhase} totalPrice={totalPrice}/>
-        <Cart getSum={getSum} totalPrice={totalPrice}/>
+        <Register dataPhase={dataPhase}/>
+        <Cart onMinusClick={handleMinusClick} onPlusClick={handlePlusClick}/>
         <ProgressControl onClick={handleClick}/>
       </CartContext.Provider>
      </div>
