@@ -10,16 +10,16 @@ function Form3({ onChange }) {
         return (
           <div className="input-group input-w-lg-4 input-w-sm-full" key={data.name}>
             <div className="input-label">{data.label}</div>
-              <input type="text" name={data.name} placeholder={data.defaultValue} 
-              onChange={(e) => onChange({ name: data.name, inputValue: e.target.value})}/>
+              <input type="text" name={data.name} placeholder={data.defaultValue} value={data.value}
+              onChange={(e) => onChange({ name: data.name, value: e.target.value})}/>
           </div>
         )
       } else {
         return (
           <div className="input-group input-w-lg-3 input-w-sm-s3" key={data.name}>
             <div className="input-label">{data.label}</div>
-              <input type="text" name={data.name} placeholder={data.defaultValue} 
-              onChange={(e) => onChange({ name: data.name, inputValue: e.target.value})}/>
+              <input type="text" name={data.name} placeholder={data.defaultValue} value={data.value}
+              onChange={(e) => onChange({ name: data.name, value: e.target.value})}/>
           </div>
         )
       }
@@ -34,7 +34,7 @@ export default function Step3({ onChange }) {
       <h3 className="form-title">付款資訊</h3>
       <section className="form-body col col-12">
         <div className="col col-12">
-          <Form3 onChange={({ name, inputValue }) => onChange({ name, inputValue })}/>
+          <Form3 onChange={({ name, value }) => onChange({ name, value })}/>
         </div>
       </section>
     </form>

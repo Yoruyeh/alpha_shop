@@ -14,13 +14,13 @@ function Main() {
   const totalPrice = productData.map(data => data.price * data.quantity).reduce((acc, cur) => acc + cur)
 
 
-  function handleChange({ name, inputValue }) {
+  function handleChange({ name, value }) {
     setFormValue((prevData) => {
       return prevData.map(data => {
         if (data.name === name) {
           return {
             ...data,
-            currentValue: inputValue,
+            value: value,
           }
         }
         return data;
@@ -30,7 +30,7 @@ function Main() {
 
   function handleSubmit() {
     formValue.map(data => {
-     return console.log(`${data.label}: ${data.currentValue}`)
+     return console.log(`${data.label}: ${data.value}`)
     })
     return console.log(`購物車總金額：${totalPrice}`)
   }
@@ -73,6 +73,7 @@ function Main() {
     } else if (dataPhase === 3) {
       setDataPhase(1)
       handleSubmit()
+      setFormValue(formData)
     }
   }
 
